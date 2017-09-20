@@ -10,6 +10,5 @@ if [ ! -f "$1.ipynb" ] ; then
     exit 1
 fi
 
-jupyter-nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute $1
-jupyter-nbconvert --to html $1.nbconvert
-rm $1.nbconvert.ipynb
+jupyter-nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute $1 --output $1
+jupyter-nbconvert --to html $1
